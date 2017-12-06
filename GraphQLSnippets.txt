@@ -1,4 +1,19 @@
+1# write query/mutation in GraphiQL
+2# copy query/mutation to component
+3# import gql and graphql
+4# connect component to graphql and pass q/m
+5# link submittal with q/m
 
+
+
+mutation AddLyricToSong($songId:ID!,$content:String){
+  addLyricToSong(songId:$songId,content:$content){
+    id
+    lyrics{
+      content
+    }
+  }
+}
 
 
 
