@@ -1,3 +1,25 @@
+
+
+
+
+/!\
+Queries are called automatically
+Mutations are called manually
+
+
+GraphiQL Syntax Query:
+######################
+query SongQuery($id: ID!) {
+  song(id: $id) {
+    id
+    title
+  }
+}
+
+
+GraphiQL Syntax Mutation:
+#########################
+
 mutation DeleteSong($id:String){
   deleteSong(id:$id){
    id,title 
@@ -6,12 +28,8 @@ mutation DeleteSong($id:String){
 
 
 
-
-
-
-
-==> to call a mutation in React
-
+React mutation call:
+####################
 
 onSubmit(event) {
 		event.preventDefault();
@@ -35,8 +53,8 @@ const mutation = gql`
 export default graphql(mutation)(SongCreate);
 
 
-==> to call a mutation in GraphiQL
-
+GraphiQL call a mutation:
+#########################
 mutation {
 	addSong(title:"Dog call"){
     id
