@@ -1,3 +1,28 @@
+==> to call a mutation in React
+
+
+onSubmit(event) {
+		event.preventDefault();
+		this.props
+			.mutate({
+				variables: {
+					title: this.state.title
+				}
+			})
+			.then(() => hashHistory.push('/'));
+	}
+
+const mutation = gql`
+	mutation AddSong($title: String) {
+		addSong(title: $title) {
+			title
+		}
+	}
+`;
+
+export default graphql(mutation)(SongCreate);
+
+
 ==> to call a mutation in GraphiQL
 
 mutation {
@@ -7,15 +32,22 @@ mutation {
 	}	
 }
 
+==> to call a mutation with query variables in GraphiQL
 
-
-==> to call a mutation in React Component
-
-const mutation = gql`
-mutation {
-	addSong(title:"Dog call"){
+mutation AddSong($title:String){
+	addSong(title:$title){
     id
     title
 	}	
 }
-`;
+
+#Query Variables
+
+{
+    "title":"Blue Moon"
+}
+
+
+
+
+
