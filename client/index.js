@@ -8,7 +8,10 @@ import App from './components/App';
 import SongList from './components/SongList';
 import SongCreate from './components/SongCreate';
 import SongDetail from './components/SongDetail';
-const client = new ApolloClient({});
+// apollo store config
+const client = new ApolloClient({
+	dataIdFromObject: o => o.id
+});
 const Root = () => {
 	return (
 		<ApolloProvider client={client}>
