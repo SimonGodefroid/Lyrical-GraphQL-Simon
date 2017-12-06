@@ -1,0 +1,21 @@
+==> to call a mutation in GraphiQL
+
+mutation {
+	addSong(title:"Dog call"){
+    id
+    title
+	}	
+}
+
+
+
+==> to call a mutation in React Component
+
+const mutation = gql`
+mutation {
+	addSong(title:"Dog call"){
+    id
+    title
+	}	
+}
+`;
