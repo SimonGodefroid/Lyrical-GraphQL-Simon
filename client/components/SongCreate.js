@@ -28,7 +28,6 @@ class SongCreate extends Component {
 					<label>Song Title:</label>
 					<input
 						className={``}
-						// onChange={evt => this.onHandleChange(evt)}
 						onChange={evt => this.setState({ title: evt.target.value })}
 						value={this.state.title}
 					/>
