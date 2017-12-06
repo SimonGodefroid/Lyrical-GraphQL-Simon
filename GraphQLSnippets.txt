@@ -1,3 +1,15 @@
+mutation DeleteSong($id:String){
+  deleteSong(id:$id){
+   id,title 
+  }
+}
+
+
+
+
+
+
+
 ==> to call a mutation in React
 
 
